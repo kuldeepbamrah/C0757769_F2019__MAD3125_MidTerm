@@ -150,7 +150,7 @@
         android:padding="10dp"
         android:fontFamily="sans-serif-black"
         android:text="List of Customer's Bills"
-        android:textColor="@android:color/background_light"
+        android:textColor="@android:color/background_dark"
         android:textSize="20dp" />
 
     <androidx.recyclerview.widget.RecyclerView
