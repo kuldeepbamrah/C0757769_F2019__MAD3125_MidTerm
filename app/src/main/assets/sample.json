@@ -1,0 +1,78 @@
+[
+  {
+    "id": 1,
+    "firstName": "Sanjeev",
+    "lastName": "Gupta",
+    "age": 21,
+    "email": "sanjeev@gmail.com",
+
+    "bill": [{
+      "billId": 123,
+      "billDate": "31-12-2019",
+      "billType": "Mobile",
+      "billAmount": 21.43
+    },
+      {
+        "billId": 987,
+        "billDate": "12-03-2019",
+        "billType": "Internet",
+        "billAmount": 21.43
+      }]
+
+  },
+  {
+    "id": 2,
+    "firstName": "Rizul",
+    "lastName": "Goyal",
+    "age": 25,
+    "email": "rizul@gmail.com",
+
+    "bill": [{
+      "billId": 1,
+      "billDate": "26-02-2019",
+      "billType": "Internet",
+      "billAmount": 128.98
+    },{
+      "billId": 134,
+      "billDate": "09-02-2019",
+      "billType": "Mobile",
+      "billAmount": 768.98
+    },{
+      "billId": 1675,
+      "billDate": "26-02-2019",
+      "billType": "Hydro",
+      "billAmount": 438.64
+    }]
+
+  },
+  {
+    "id": 3,
+    "firstName": "Kuldeep",
+    "lastName": "Singh",
+    "age": 31,
+    "email": "kuldeep@gmail.com",
+
+    "bill": [{
+      "billId": 12,
+      "billDate": "15-06-2019",
+      "billType": "Hydro",
+      "billAmount": 167.76
+    }]
+
+  },
+  {
+    "id": 4,
+    "firstName": "Anmol",
+    "lastName": "Sharma",
+    "age": 29,
+    "email": "anmol@gmail.com",
+
+    "bill": [{
+      "billId": 145,
+      "billDate": "14-02-2018",
+      "billType": "Insurance",
+      "billAmount": 232.76
+    }]
+
+  }
+]
