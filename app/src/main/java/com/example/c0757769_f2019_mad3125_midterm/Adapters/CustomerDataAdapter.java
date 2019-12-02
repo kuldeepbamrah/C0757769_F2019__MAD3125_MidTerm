@@ -12,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.c0757769_f2019_mad3125_midterm.Activities.CustomerDetailActivity;
 import com.example.c0757769_f2019_mad3125_midterm.ModelClasses.Customer;
 import com.example.c0757769_f2019_mad3125_midterm.R;
 
@@ -69,11 +70,17 @@ public class CustomerDataAdapter extends RecyclerView.Adapter<CustomerDataAdapte
         holder.id.setText("Customer ID: "+mydata.getId().toString());
         holder.age.setText("Customer Age: "+mydata.getAge().toString()+" Years");
 
+        holder.mycardview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
 
-        
+                Intent myintent = new Intent(context, CustomerDetailActivity.class);
+                myintent.putExtra("custobject",mydata);
+                context.startActivity(myintent);
+                //  Toast.makeText(context,"position = "+position,Toast.LENGTH_LONG).show();
 
-
-        
+            }
+        });
 
     }
 
