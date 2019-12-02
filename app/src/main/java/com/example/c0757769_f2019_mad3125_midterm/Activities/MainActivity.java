@@ -10,10 +10,12 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +25,7 @@ import com.example.c0757769_f2019_mad3125_midterm.DatabaseFiles.UserDatabase;
 import com.example.c0757769_f2019_mad3125_midterm.ModelClasses.Customer;
 import com.example.c0757769_f2019_mad3125_midterm.R;
 import com.example.c0757769_f2019_mad3125_midterm.SwipeToDeleteCallback;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
@@ -42,12 +45,23 @@ public class MainActivity extends AppCompatActivity
     String temps;
     RecyclerView myrecycler;
     CardView mycardview;
+    FloatingActionButton add;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         myrecycler = (RecyclerView) findViewById(R.id.recycler_main);
+        add = findViewById(R.id.fab);
+
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this,AddBillActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
 
 

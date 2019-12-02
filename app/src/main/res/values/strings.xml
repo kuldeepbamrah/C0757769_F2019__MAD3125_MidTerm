@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">C0757769_F2019_MAD3125_MidTerm</string>
+    <string-array name="billtype">
+        <item>Internet</item>
+        <item>Mobile</item>
+        <item>Insurance</item>
+        <item>Hydro</item>
+    </string-array>
 </resources>
