@@ -1,4 +1,4 @@
-package com.example.c0757769_f2019_mad3125_midterm;
+package com.example.c0757769_f2019_mad3125_midterm.Activities;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +9,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.c0757769_f2019_mad3125_midterm.R;
 
 public class Login extends AppCompatActivity implements View.OnClickListener
 {
@@ -44,7 +46,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener
 
                 if(uName.equalsIgnoreCase("Kuldeep") && pass.equalsIgnoreCase("1234"))
                 {
-                    Intent intent = new Intent(this,MainActivity.class);
+                    Intent intent = new Intent(this, MainActivity.class);
                     startActivity(intent);
                 }else
                 Toast.makeText(Login.this,"Login", Toast.LENGTH_SHORT).show();
