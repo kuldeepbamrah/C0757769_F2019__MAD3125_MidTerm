@@ -5,6 +5,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.lifecycle.Observer;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -21,6 +22,7 @@ import com.example.c0757769_f2019_mad3125_midterm.Adapters.CustomerDataAdapter;
 import com.example.c0757769_f2019_mad3125_midterm.DatabaseFiles.UserDatabase;
 import com.example.c0757769_f2019_mad3125_midterm.ModelClasses.Customer;
 import com.example.c0757769_f2019_mad3125_midterm.R;
+import com.example.c0757769_f2019_mad3125_midterm.SwipeToDeleteCallback;
 import com.google.gson.Gson;
 
 import org.json.JSONArray;
@@ -87,7 +89,11 @@ public class MainActivity extends AppCompatActivity
 
         LinearLayoutManager mylinearlayout = new LinearLayoutManager(this);
         myrecycler.setLayoutManager(mylinearlayout);
+
         myrecycler.setAdapter(myadapter);
+        ItemTouchHelper itemTouchHelper = new
+                ItemTouchHelper(new SwipeToDeleteCallback(myadapter));
+        itemTouchHelper.attachToRecyclerView(myrecycler);
 
         uData.daoObjct().getUserDetails().observe(this, new Observer<List<Customer>>() {
             @Override

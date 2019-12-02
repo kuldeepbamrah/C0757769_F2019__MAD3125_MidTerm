@@ -7,12 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.c0757769_f2019_mad3125_midterm.Activities.CustomerDetailActivity;
+import com.example.c0757769_f2019_mad3125_midterm.Activities.MainActivity;
 import com.example.c0757769_f2019_mad3125_midterm.ModelClasses.Customer;
 import com.example.c0757769_f2019_mad3125_midterm.R;
 
@@ -112,6 +114,11 @@ public class CustomerDataAdapter extends RecyclerView.Adapter<CustomerDataAdapte
 
 
         }
+    }
+
+    public void deleteItem(int position) {
+        myaaraylist.remove(position);
+        notifyDataSetChanged();
     }
 
 
