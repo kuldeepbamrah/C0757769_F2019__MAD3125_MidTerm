@@ -118,11 +118,12 @@ public class CustomerDataAdapter extends RecyclerView.Adapter<CustomerDataAdapte
     }
 
     public void deleteItem(int position) {
-        myaaraylist.remove(position);
+
         Customer customer = myaaraylist.get(position);
         UserDatabase userDatabase = UserDatabase.getInstance(getContext());
         userDatabase.daoObjct().delete(customer);
         Toast.makeText(getContext(),"Deleted",Toast.LENGTH_SHORT).show();
+        myaaraylist.remove(position);
         notifyDataSetChanged();
     }
 
