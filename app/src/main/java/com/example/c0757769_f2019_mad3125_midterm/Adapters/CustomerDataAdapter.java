@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.c0757769_f2019_mad3125_midterm.Activities.CustomerDetailActivity;
 import com.example.c0757769_f2019_mad3125_midterm.Activities.MainActivity;
+import com.example.c0757769_f2019_mad3125_midterm.DatabaseFiles.UserDatabase;
 import com.example.c0757769_f2019_mad3125_midterm.ModelClasses.Customer;
 import com.example.c0757769_f2019_mad3125_midterm.R;
 
@@ -118,6 +119,10 @@ public class CustomerDataAdapter extends RecyclerView.Adapter<CustomerDataAdapte
 
     public void deleteItem(int position) {
         myaaraylist.remove(position);
+        Customer customer = myaaraylist.get(position);
+        UserDatabase userDatabase = UserDatabase.getInstance(getContext());
+        userDatabase.daoObjct().delete(customer);
+        Toast.makeText(getContext(),"Deleted",Toast.LENGTH_SHORT).show();
         notifyDataSetChanged();
     }
 
