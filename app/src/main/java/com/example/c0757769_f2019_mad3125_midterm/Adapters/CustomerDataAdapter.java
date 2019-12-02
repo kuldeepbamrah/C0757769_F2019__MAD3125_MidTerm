@@ -69,6 +69,9 @@ public class CustomerDataAdapter extends RecyclerView.Adapter<CustomerDataAdapte
         holder.id.setText("Customer ID: "+mydata.getId().toString());
         holder.age.setText("Customer Age: "+mydata.getAge().toString()+" Years");
 
+
+        
+
     }
 
 
