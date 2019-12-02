@@ -67,43 +67,7 @@ public class CustomerDataAdapter extends RecyclerView.Adapter<CustomerDataAdapte
 
         holder.name.setText("Customer Name: "+ fname);
         holder.id.setText("Customer ID: "+mydata.getId().toString());
-        holder.age.setText("CUstomer Age: "+mydata.getAge().toString()+" Years");
-
-
-//        if(myvehicle == null)
-//        {
-//            holder.type.setText("No Vehicle");
-//            holder.type.setTextColor(Color.RED);
-//            holder.type.setTextSize(20);
-//
-//            holder.plate.setVisibility(View.GONE);
-//            holder.make.setVisibility(View.GONE);
-//            holder.model.setVisibility(View.GONE);
-//
-//
-//        }
-//        else {
-//            holder.type.setText("Vehicle Type: "+myvehicle.getType());
-//            holder.make.setText("Vehicle Make: "+myvehicle.getMake());
-//            holder.model.setText("Vehicle Model: "+myvehicle.getModel());
-//            holder.plate.setText("Vehicle Plate: "+myvehicle.getPlate());
-//
-//        }
-
-
-
-
-//        holder.mycardview.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//                Intent myintent = new Intent(context, CustomerDetailsActivity.class);
-//                myintent.putExtra("custobject",mydata);
-//                context.startActivity(myintent);
-//              //  Toast.makeText(context,"position = "+position,Toast.LENGTH_LONG).show();
-//
-//            }
-//        });
+        holder.age.setText("Customer Age: "+mydata.getAge().toString()+" Years");
 
     }
 
