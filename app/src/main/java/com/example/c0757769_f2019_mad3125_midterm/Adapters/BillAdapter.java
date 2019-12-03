@@ -13,7 +13,9 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 
+import com.example.c0757769_f2019_mad3125_midterm.DatabaseFiles.UserDatabase;
 import com.example.c0757769_f2019_mad3125_midterm.ModelClasses.Bill;
+import com.example.c0757769_f2019_mad3125_midterm.ModelClasses.Customer;
 import com.example.c0757769_f2019_mad3125_midterm.R;
 
 import java.util.List;
@@ -22,6 +24,7 @@ import java.util.List;
 public class BillAdapter extends RecyclerView.Adapter<BillAdapter.ViewHolder> {
 
     private Activity context;
+    private Customer customer;
     private List<Bill> myaaraylist;
 
 
@@ -30,6 +33,9 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.ViewHolder> {
 
     }
 
+    public void setCustomer(Customer customer) {
+        this.customer = customer;
+    }
 
     public Context getContext() {
         return context;
@@ -108,7 +114,13 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.ViewHolder> {
 
     public void deleteItem(int position)
     {
-        
+        Bill bill = myaaraylist.get(position);
+        myaaraylist.remove(position);
+        List<Bill> bills = customer.getBill();
+        bills.remove(bill);
+        UserDatabase userDatabase = UserDatabase.getInstance(getContext());
+        userDatabase.daoObjct().update(customer);
+        notifyDataSetChanged();
 
     }
 

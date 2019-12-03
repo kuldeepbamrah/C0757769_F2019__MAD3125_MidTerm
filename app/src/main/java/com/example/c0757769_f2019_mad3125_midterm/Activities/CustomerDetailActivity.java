@@ -5,7 +5,9 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.TextView;
 
 import com.example.c0757769_f2019_mad3125_midterm.Adapters.BillAdapter;
@@ -14,6 +16,7 @@ import com.example.c0757769_f2019_mad3125_midterm.MIsc.SwipeToDeleteCallbackForC
 import com.example.c0757769_f2019_mad3125_midterm.ModelClasses.Bill;
 import com.example.c0757769_f2019_mad3125_midterm.ModelClasses.Customer;
 import com.example.c0757769_f2019_mad3125_midterm.R;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -21,6 +24,7 @@ public class CustomerDetailActivity extends AppCompatActivity {
     TextView custid, custname, custemail, custage;
     RecyclerView myrecycler;
     TextView detailtext;
+    FloatingActionButton addBill;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +33,15 @@ public class CustomerDetailActivity extends AppCompatActivity {
 
         Customer custtemp = getIntent().getParcelableExtra("custobject");
 
+        addBill = findViewById(R.id.fab1);
+
+        addBill.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(CustomerDetailActivity.this,AddBillActivity.class);
+                startActivity(intent);
+            }
+        });
 
         custid = findViewById(R.id.textEmpID);
         custname = findViewById(R.id.textEmpName);
@@ -60,6 +73,7 @@ public class CustomerDetailActivity extends AppCompatActivity {
             final BillAdapter myadapter = new BillAdapter(this);
 
             myadapter.setMyaaraylist(myBillList);
+            myadapter.setCustomer(custtemp);
 
             LinearLayoutManager mylinearlayout = new LinearLayoutManager(this);
             myrecycler.setLayoutManager(mylinearlayout);

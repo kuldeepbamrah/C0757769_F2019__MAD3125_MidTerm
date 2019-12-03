@@ -1,6 +1,7 @@
 package com.example.c0757769_f2019_mad3125_midterm.Activities;
 
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.lifecycle.Observer;
@@ -45,6 +46,7 @@ public class MainActivity extends AppCompatActivity
         setContentView(R.layout.activity_main);
         myrecycler = (RecyclerView) findViewById(R.id.recycler_main);
         add = findViewById(R.id.fab);
+
 
         add.setOnClickListener(new View.OnClickListener() {
             @Override

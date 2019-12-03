@@ -155,8 +155,11 @@ public class AddBillActivity extends AppCompatActivity implements View.OnClickLi
         Customer custtemp =getIntent().getParcelableExtra("custobjectvehicle");
         Bill tempobject = new Bill(Integer.parseInt(bid),bdate,btype,Double.parseDouble(bamount));
         final UserDatabase uData = UserDatabase.getInstance(AddBillActivity.this);
-        custtemp.setmyBill(tempobject);
-        uData.daoObjct().update(custtemp);
+        if(custtemp != null)
+        {
+            custtemp.setmyBill(tempobject);
+            uData.daoObjct().update(custtemp);
+        }
 
         finish();
 

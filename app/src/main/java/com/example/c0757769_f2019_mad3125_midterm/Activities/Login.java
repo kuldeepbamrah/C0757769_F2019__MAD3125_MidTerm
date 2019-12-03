@@ -49,7 +49,7 @@ public class Login extends AppCompatActivity implements View.OnClickListener
                     Intent intent = new Intent(this, MainActivity.class);
                     startActivity(intent);
                 }else
-                Toast.makeText(Login.this,"Login", Toast.LENGTH_SHORT).show();
+                Toast.makeText(Login.this,"Login Fail", Toast.LENGTH_SHORT).show();
                 break;
         }
 
