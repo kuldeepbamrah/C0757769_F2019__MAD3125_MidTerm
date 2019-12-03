@@ -151,19 +151,21 @@ public class AddBillActivity extends AppCompatActivity implements View.OnClickLi
         bamount = amount.getText().toString();
 
 
-
-        Customer custtemp =getIntent().getParcelableExtra("custobjectvehicle");
-        Bill tempobject = new Bill(Integer.parseInt(bid),bdate,btype,Double.parseDouble(bamount));
-        final UserDatabase uData = UserDatabase.getInstance(AddBillActivity.this);
-        if(custtemp != null)
+        if(bid.equals(null)||btype.equals(null)||bdate.equals(null)||bamount.equals(null))
         {
-            custtemp.setmyBill(tempobject);
-            uData.daoObjct().update(custtemp);
+            Toast.makeText(AddBillActivity.this,"Please enter all the details",Toast.LENGTH_SHORT).show();
+        }else {
+            Customer custtemp = getIntent().getParcelableExtra("custobjectvehicle");
+            Bill tempobject = new Bill(Integer.parseInt(bid), bdate, btype, Double.parseDouble(bamount));
+            final UserDatabase uData = UserDatabase.getInstance(AddBillActivity.this);
+            if (custtemp != null) {
+                custtemp.setmyBill(tempobject);
+                uData.daoObjct().update(custtemp);
+            }
+
+            finish();
+
         }
-
-        finish();
-
-
 
 
 

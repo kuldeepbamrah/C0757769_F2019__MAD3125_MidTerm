@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.Window;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.example.c0757769_f2019_mad3125_midterm.DatabaseFiles.UserDatabase;
 import com.example.c0757769_f2019_mad3125_midterm.ModelClasses.Customer;
@@ -62,10 +63,15 @@ public class AddCustomerActivity extends AppCompatActivity implements View.OnCli
         custlname = lname.getText().toString();
         custemail = email.getText().toString();
 
-        Customer tempobject = new Customer(Integer.parseInt(custid),custfname,custlname,Integer.parseInt(custage),custemail);
-        final UserDatabase uData = UserDatabase.getInstance(AddCustomerActivity.this);
-        uData.daoObjct().insert(tempobject);
-        finish();
+        if(custid.equals(null)||custage.equals(null)||custfname.equals(null)||custlname.equals(null)||custemail.equals(null))
+        {
+            Toast.makeText(AddCustomerActivity.this,"Please fill all the Field",Toast.LENGTH_SHORT).show();
+        }else {
+            Customer tempobject = new Customer(Integer.parseInt(custid), custfname, custlname, Integer.parseInt(custage), custemail);
+            final UserDatabase uData = UserDatabase.getInstance(AddCustomerActivity.this);
+            uData.daoObjct().insert(tempobject);
+            finish();
+        }
 
 
     }
