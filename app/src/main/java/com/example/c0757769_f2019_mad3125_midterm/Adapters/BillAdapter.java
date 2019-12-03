@@ -106,6 +106,11 @@ public class BillAdapter extends RecyclerView.Adapter<BillAdapter.ViewHolder> {
         }
     }
 
+    public void deleteItem(int position)
+    {
+        
+
+    }
 
 
 }

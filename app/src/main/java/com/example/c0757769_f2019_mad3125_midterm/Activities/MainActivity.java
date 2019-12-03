@@ -1,7 +1,6 @@
 package com.example.c0757769_f2019_mad3125_midterm.Activities;
 
 import androidx.annotation.Nullable;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.cardview.widget.CardView;
 import androidx.lifecycle.Observer;
@@ -9,22 +8,16 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.example.c0757769_f2019_mad3125_midterm.Adapters.CustomerDataAdapter;
 import com.example.c0757769_f2019_mad3125_midterm.DatabaseFiles.UserDatabase;
 import com.example.c0757769_f2019_mad3125_midterm.ModelClasses.Customer;
 import com.example.c0757769_f2019_mad3125_midterm.R;
-import com.example.c0757769_f2019_mad3125_midterm.SwipeToDeleteCallback;
+import com.example.c0757769_f2019_mad3125_midterm.MIsc.SwipeToDeleteCallbackForCustomer;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.gson.Gson;
 
@@ -36,7 +29,6 @@ import java.io.InputStream;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.MissingFormatArgumentException;
 
 public class MainActivity extends AppCompatActivity
 {
@@ -57,7 +49,7 @@ public class MainActivity extends AppCompatActivity
         add.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this,AddBillActivity.class);
+                Intent intent = new Intent(MainActivity.this,AddCustomerActivity.class);
                 startActivity(intent);
             }
         });
@@ -106,7 +98,7 @@ public class MainActivity extends AppCompatActivity
 
         myrecycler.setAdapter(myadapter);
         ItemTouchHelper itemTouchHelper = new
-                ItemTouchHelper(new SwipeToDeleteCallback(myadapter));
+                ItemTouchHelper(new SwipeToDeleteCallbackForCustomer(myadapter));
         itemTouchHelper.attachToRecyclerView(myrecycler);
 
         uData.daoObjct().getUserDetails().observe(this, new Observer<List<Customer>>() {

@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar">
-        <activity android:name=".Activities.AddBillActivity"></activity>
+        <activity android:name=".Activities.AddCustomerActivity"></activity>
+        <activity android:name=".Activities.AddBillActivity" />
         <activity android:name=".Activities.CustomerDetailActivity" />
         <activity android:name=".Activities.Login">
             <intent-filter>

@@ -1,6 +1,7 @@
 package com.example.c0757769_f2019_mad3125_midterm.Activities;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -8,6 +9,8 @@ import android.os.Bundle;
 import android.widget.TextView;
 
 import com.example.c0757769_f2019_mad3125_midterm.Adapters.BillAdapter;
+import com.example.c0757769_f2019_mad3125_midterm.MIsc.SwipeToDeleteCallBackForBill;
+import com.example.c0757769_f2019_mad3125_midterm.MIsc.SwipeToDeleteCallbackForCustomer;
 import com.example.c0757769_f2019_mad3125_midterm.ModelClasses.Bill;
 import com.example.c0757769_f2019_mad3125_midterm.ModelClasses.Customer;
 import com.example.c0757769_f2019_mad3125_midterm.R;
@@ -55,13 +58,18 @@ public class CustomerDetailActivity extends AppCompatActivity {
             myrecycler = (RecyclerView) findViewById(R.id.recycler_vehicle);
 
             final BillAdapter myadapter = new BillAdapter(this);
-            myadapter.notifyDataSetChanged();
+
             myadapter.setMyaaraylist(myBillList);
-            myadapter.notifyDataSetChanged();
 
             LinearLayoutManager mylinearlayout = new LinearLayoutManager(this);
             myrecycler.setLayoutManager(mylinearlayout);
             myrecycler.setAdapter(myadapter);
+            ItemTouchHelper itemTouchHelper = new
+                    ItemTouchHelper(new SwipeToDeleteCallBackForBill(myadapter));
+            itemTouchHelper.attachToRecyclerView(myrecycler);
+
+
+
         }
     }
 }

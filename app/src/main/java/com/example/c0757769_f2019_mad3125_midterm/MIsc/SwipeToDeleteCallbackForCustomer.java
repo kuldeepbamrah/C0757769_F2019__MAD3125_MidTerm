@@ -1,4 +1,4 @@
-package com.example.c0757769_f2019_mad3125_midterm;
+package com.example.c0757769_f2019_mad3125_midterm.MIsc;
 
 
 import android.graphics.Canvas;
@@ -13,14 +13,15 @@ import androidx.recyclerview.widget.ItemTouchHelper;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.c0757769_f2019_mad3125_midterm.Adapters.CustomerDataAdapter;
+import com.example.c0757769_f2019_mad3125_midterm.R;
 
-public class SwipeToDeleteCallback extends ItemTouchHelper.SimpleCallback
+public class SwipeToDeleteCallbackForCustomer extends ItemTouchHelper.SimpleCallback
 {
     private Drawable icon;
     private final ColorDrawable background;
 
     private CustomerDataAdapter mAdapter;
-    public SwipeToDeleteCallback(CustomerDataAdapter adapter)
+    public SwipeToDeleteCallbackForCustomer(CustomerDataAdapter adapter)
     {
     super(0,ItemTouchHelper.LEFT | ItemTouchHelper.RIGHT);
     mAdapter = adapter;
