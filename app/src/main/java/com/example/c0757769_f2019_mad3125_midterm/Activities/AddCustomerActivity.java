@@ -63,14 +63,8 @@ public class AddCustomerActivity extends AppCompatActivity implements View.OnCli
         custemail = email.getText().toString();
 
         Customer tempobject = new Customer(Integer.parseInt(custid),custfname,custlname,Integer.parseInt(custage),custemail);
-
         final UserDatabase uData = UserDatabase.getInstance(AddCustomerActivity.this);
-
-
         uData.daoObjct().insert(tempobject);
-
-
-
         finish();
 
 

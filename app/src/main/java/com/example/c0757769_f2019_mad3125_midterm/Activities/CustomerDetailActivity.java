@@ -31,7 +31,7 @@ public class CustomerDetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_customer_detail);
 
-        Customer custtemp = getIntent().getParcelableExtra("custobject");
+        final Customer custtemp = getIntent().getParcelableExtra("custobject");
 
         addBill = findViewById(R.id.fab1);
 
@@ -39,7 +39,9 @@ public class CustomerDetailActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(CustomerDetailActivity.this,AddBillActivity.class);
+                intent.putExtra("custobjectvehicle", custtemp);
                 startActivity(intent);
+
             }
         });
 
