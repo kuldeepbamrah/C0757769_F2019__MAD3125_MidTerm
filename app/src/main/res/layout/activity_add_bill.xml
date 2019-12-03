@@ -226,6 +226,7 @@
             android:layout_height="wrap_content"
             android:layout_margin="10dp"
             android:background="@color/customBlue"
+            android:backgroundTint="@color/colorPrimaryDark"
             android:text="Click to Add Bill"
             android:textColor="@android:color/background_light"
             android:textSize="20dp"></Button>
