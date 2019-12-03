@@ -151,7 +151,7 @@ public class AddBillActivity extends AppCompatActivity implements View.OnClickLi
         bamount = amount.getText().toString();
 
 
-        if(bid.equals(null)||btype.equals(null)||bdate.equals(null)||bamount.equals(null))
+        if(bid==null||btype==null||bdate==null||bamount.isEmpty())
         {
             Toast.makeText(AddBillActivity.this,"Please enter all the details",Toast.LENGTH_SHORT).show();
         }else {

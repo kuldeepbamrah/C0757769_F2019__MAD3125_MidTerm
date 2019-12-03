@@ -37,7 +37,8 @@
                     android:layout_width="100dp"
                     android:layout_height="100dp"
                     android:layout_gravity="center_vertical"
-                    android:src="@drawable/cash"/>
+                    android:src="@drawable/cash"
+                    android:contentDescription="TODO" />
 
                 <LinearLayout
                     android:gravity="center_vertical"

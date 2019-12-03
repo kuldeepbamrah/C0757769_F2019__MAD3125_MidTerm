@@ -50,7 +50,6 @@ public class Customer implements Parcelable {
      *
      * @param firstName
      * @param lastName
-     * @param bill
      * @param id
      * @param age
      * @param email

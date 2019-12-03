@@ -63,7 +63,7 @@ public class AddCustomerActivity extends AppCompatActivity implements View.OnCli
         custlname = lname.getText().toString();
         custemail = email.getText().toString();
 
-        if(custid.equals(null)||custage.equals(null)||custfname.equals(null)||custlname.equals(null)||custemail.equals(null))
+        if(custid == null||custage == null||custfname == null||custlname ==null||custemail.isEmpty())
         {
             Toast.makeText(AddCustomerActivity.this,"Please fill all the Field",Toast.LENGTH_SHORT).show();
         }else {
@@ -79,4 +79,5 @@ public class AddCustomerActivity extends AppCompatActivity implements View.OnCli
 
 
 }
+
 
